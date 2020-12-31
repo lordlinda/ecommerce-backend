@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "order"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "paid",
+        "unpaid"
+      ]
+    },
+    "checkout_session": {
+      "type": "string"
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "product": {
+      "model": "product",
+      "via": "orders"
+    }
+  }
+}
